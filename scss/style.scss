@@ -1,0 +1,36 @@
+@use "_index" as *;
+@use "components/_header";
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "KoPubBatang", serif;
+    font-size: toRem(17);
+    color: $colorMain;
+    background-color: $bgMain;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper>main {
+    flex-grow: 1;
+}
+
+[class*="__container"] {
+    margin: 0 auto;
+    max-width: 1230px;
+    padding: 0 15px;
+}
