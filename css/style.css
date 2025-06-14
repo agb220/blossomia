@@ -180,21 +180,22 @@ body.menu-open .header .icon-menu::after {
           transform: rotate(-45deg) translateY(2px);
   bottom: 50%;
 }
-.header .menu {
+.header .menu__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 1.5625rem;
-}
-.header .menu__body {
   position: fixed;
   top: 5.6875rem;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 5.6875rem);
   background-color: #F8F3EC;
   padding: 3.125rem 1.25rem;
   -webkit-box-orient: vertical;
@@ -208,28 +209,25 @@ body.menu-open .header .icon-menu::after {
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-  z-index: 1000;
+  z-index: 999;
+  overflow: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow: auto;
 }
 body.menu-open .header .menu__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 1.5625rem;
+  left: 0;
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .header .menu__body::before {
   content: "";
   position: fixed;
-  top: 0;
+  top: 5.6875rem;
   left: -100%;
   width: 100%;
   height: 5.6875rem;
@@ -296,6 +294,8 @@ body.menu-open .header .menu__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 @media (min-width: 48em) {
   .header__active--mobile {
@@ -350,6 +350,8 @@ body.menu-open .header .menu__body {
             transform: none;
     -webkit-transition: none;
     transition: none;
+    overflow: hidden;
+    border: none;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
