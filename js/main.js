@@ -34,3 +34,46 @@ function documentActions(e) {
     document.body.classList.toggle("menu-open");
   }
 }
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 768) {
+    document.body.classList.remove("menu-open");
+  }
+});
+
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+document.querySelectorAll(".hero__img-left, .hero__img-right").forEach((el) =>
+  observer.observe(el)
+);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileImage = document.querySelector(".hero__img-mb");
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        mobileImage.classList.add("visible");
+      }
+    },
+    {
+      threshold: 0.3, 
+    }
+  );
+
+  if (mobileImage) {
+    observer.observe(mobileImage);
+  }
+});
