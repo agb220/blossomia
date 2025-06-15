@@ -16,7 +16,8 @@
     }
 
     &__logo {
-        aspect-ratio: 213 / 33;
+        aspect-ratio: 178 / 33;
+        max-width: toRem(178);
         flex-shrink: 0;
         position: relative;
         z-index: 6;
@@ -25,6 +26,11 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+        }
+
+        @media (min-width: 48em) {
+            aspect-ratio: 213 / 33;
+            max-width: toRem(213);
         }
     }
 
@@ -100,13 +106,14 @@
             transition: transform 0.3s ease;
             z-index: 999;
             overflow: auto;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
 
             body.menu-open & {
                 left:0;
                 transform: translateX(0);
                 align-items: flex-start;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
                
             }
         }
@@ -179,7 +186,13 @@
     @media (min-width: 48em) {
         display: none;
     }
-}
+  }
+
+  &__cart-mb{
+    @media (min-width: 48em) {
+        display: none;
+    }
+  }
 
     &__item {
         width: toRem(24);
@@ -207,6 +220,7 @@
         left: 0;
         transition: 0.4s;
         backdrop-filter: blur(113.65px);
+        background-color: $bgMain;
         z-index: -1;
     }
 
@@ -223,7 +237,8 @@
                 background-color: transparent;
                 padding: 0;
                 flex-direction: row;
-                transform: none;
+                transform: none !important;
+                display: none;
                 transition: none;
                 overflow:hidden;
                 border:none;
