@@ -80,7 +80,7 @@
             }
 
             &::after {
-                transform: rotate(-45deg) translateY(2px);
+                transform: rotate(-45deg) translateY(1px);
                 bottom: 50%;
             }
         }
@@ -96,21 +96,19 @@
             gap: toRem(25);
             position: fixed;
             top: toRem(91);
-            left: 0;
+            left: -100%;
             width: 100%;
             height: calc(100vh - toRem(91));
             background-color: $bgMain;
             padding: toRem(50) toRem(20);
             flex-direction: column;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
+            transition: left 0.3s ease;
             z-index: 999;
             overflow: auto;
 
 
             body.menu-open & {
                 left:0;
-                transform: translateX(0);
                 align-items: flex-start;
                 border-top: 1px solid rgba(0, 0, 0, 0.1);
                 box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -237,8 +235,6 @@
                 background-color: transparent;
                 padding: 0;
                 flex-direction: row;
-                transform: none !important;
-                display: none;
                 transition: none;
                 overflow:hidden;
                 border:none;
@@ -252,6 +248,7 @@
                 align-items: center;
                 justify-content: center;
             }
+
         }
     }
 }
