@@ -6,6 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         document.getElementById("header").innerHTML = data;
       });
+});
+  
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
   });
   
 

@@ -137,7 +137,6 @@
         &__item {
             font-family: 'Shanti';
             font-size: toRem(18);
-            line-height: 1.2;
             transition: color 0.3s;
 
             padding: toRem(10) 0;
@@ -151,9 +150,11 @@
             a {
                 color: inherit;
 
-                &:hover {
-                    text-decoration: underline;
-                    color: $colorLight;
+                @media (any-hover: hover), (pointer: fine) {
+                    &:hover {
+                        text-decoration: underline;
+                        color: $colorLight;
+                    }
                 }
             }
         }
@@ -203,8 +204,10 @@
             height: 100%;
             object-fit: contain;
 
-            &:hover {
-                opacity: 0.5;
+            @media (any-hover: hover), (pointer: fine) {
+                &:hover {
+                    opacity: 0.5;
+                }
             }
         }
     }

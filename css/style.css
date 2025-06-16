@@ -247,7 +247,6 @@ body.menu-open .header .menu__body {
 .header .menu__item {
   font-family: "Shanti";
   font-size: 1.125rem;
-  line-height: 1.2;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
   padding: 0.625rem 0;
@@ -261,9 +260,11 @@ body.menu-open .header .menu__body {
 .header .menu__item a {
   color: inherit;
 }
-.header .menu__item a:hover {
-  text-decoration: underline;
-  color: #B0A496;
+@media (any-hover: hover), (pointer: fine) {
+  .header .menu__item a:hover {
+    text-decoration: underline;
+    color: #B0A496;
+  }
 }
 .header__active {
   display: -webkit-box;
@@ -319,8 +320,10 @@ body.menu-open .header .menu__body {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.header__item img:hover {
-  opacity: 0.5;
+@media (any-hover: hover), (pointer: fine) {
+  .header__item img:hover {
+    opacity: 0.5;
+  }
 }
 .header:before {
   content: "";
@@ -372,6 +375,232 @@ body.menu-open .header .menu__body {
   }
 }
 
+/*footer*/
+.footer {
+  border-top: 1px solid #DBCCBA;
+  padding: 2.3125rem 0 1.875rem 0;
+}
+@media (min-width: 48em) {
+  .footer {
+    padding: 4.5625rem 0 0.6875rem 0;
+  }
+}
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3.75rem;
+}
+@media (min-width: 48em) {
+  .footer__container {
+    gap: 3.75rem;
+  }
+}
+@media (min-width: 74em) {
+  .footer__container {
+    gap: 7.6875rem;
+  }
+}
+.footer__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3.75rem;
+}
+@media (min-width: 48em) {
+  .footer__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 74em) {
+  .footer__wrapper {
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10.4375rem;
+  }
+}
+.footer__media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3.75rem;
+}
+@media (min-width: 48em) {
+  .footer__media {
+    gap: 4.375rem;
+  }
+}
+.footer__logo {
+  aspect-ratio: 213/33;
+  max-width: 13.3125rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (min-width: 74em) {
+  .footer__logo {
+    margin-top: -0.625rem;
+  }
+}
+.footer__logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.footer__copyright {
+  -ms-flex-item-align: center;
+      align-self: center;
+  color: #4E4E4E;
+  font-family: "Carme";
+  font-size: 0.9375rem;
+}
+
+.social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.3125rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.social-media__item {
+  aspect-ratio: 20/20;
+  max-width: 1.25rem;
+}
+.social-media__link {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (any-hover: hover), (pointer: fine) {
+  .social-media__link:hover {
+    opacity: 0.5;
+  }
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3.125rem;
+}
+@media (min-width: 48em) {
+  .menu {
+    gap: 4.6875rem;
+  }
+}
+@media (min-width: 74em) {
+  .menu {
+    gap: 10.9375rem;
+  }
+}
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.25rem;
+}
+.menu__title {
+  color: #000000;
+  font-size: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+.menu__item {
+  font-family: "Carme";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.menu__link {
+  color: inherit;
+}
+@media (any-hover: hover), (pointer: fine) {
+  .menu__link:hover {
+    text-decoration: underline;
+    color: #B0A496;
+  }
+}
+
+.contacts__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  gap: 1.25rem;
+  font-family: "Carme";
+}
+@media (min-width: 74em) {
+  .contacts__items {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+
+.contact__item p {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.contact__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.contact__link {
+  font-style: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+@media (min-width: 74em) {
+  .contact__link {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -379,6 +608,7 @@ html {
 body {
   font-family: "KoPubBatang", serif;
   font-size: 1.0625rem;
+  line-height: 1.2;
   color: #2C2C2C;
   background-color: #F8F3EC;
 }
@@ -495,7 +725,6 @@ body {
 .hero__title {
   font-size: 1.875rem;
   font-weight: 300;
-  line-height: 1.2;
   margin-bottom: 2.375rem;
 }
 @media (min-width: 48em) {
@@ -540,8 +769,7 @@ body {
 }
 .hero__contentp {
   font-family: "Carme";
-  font-size: 1.0625rem;
-  line-height: 1.377;
+  line-height: 1.38;
 }
 .hero__content .button {
   width: 100%;
