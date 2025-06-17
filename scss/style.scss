@@ -40,7 +40,7 @@ body {
 /*ui kit*/
 
 .button {
-    padding: toRem(10) toRem(9) toRem(11) toRem(10);
+    padding: toRem(9) toRem(9) toRem(10) toRem(10);
     border: toRem(1) solid $bgLight;
     width: fit-content;
     cursor: pointer;
@@ -110,6 +110,8 @@ body {
         font-size: toRem(30);
         font-weight: 300;
         margin-bottom: toRem(38);
+        position: relative;
+        z-index: 5;
       
         @media (min-width: 48em) {
             font-size: toRem(48);
@@ -127,6 +129,8 @@ body {
         display: flex;
         flex-direction: column;
         gap:toRem(38);
+        position: relative;
+        z-index: 5;
 
         @media (min-width: 48em) {
             align-items: start;
@@ -290,3 +294,219 @@ body {
     }
 }
 
+
+/*Popular*/
+
+.popular {
+
+    // .popular__container
+
+    &__container {}
+
+    // .popular__wrapper
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(50);
+        padding: toRem(64) 0 toRem(64) 0;
+
+        @media (min-width: 48em) {
+            gap: toRem(61);
+            padding: toRem(80) 0 toRem(59) 0;
+
+        }
+
+
+        @media (min-width: 68em) {
+            flex-direction: row-reverse;
+            gap: toRem(41);
+            padding: toRem(100) 0 toRem(89) 0;
+        }
+    }
+
+    // .popular__big-block
+
+    &__big-block {
+        
+
+        @media (min-width: 68em) {
+            flex: 1 0 55%;
+        }
+    }
+
+    // .popular__title
+
+    &__title {
+        font-size: toRem(30);
+        font-weight: 300;
+        margin-bottom: toRem(50);
+
+        @media (min-width: 48em) {
+            font-size: toRem(40);
+            margin-bottom: toRem(41);
+        }
+
+        @media (min-width: 48em) {
+            padding-top: toRem(35);
+            font-size: toRem(60);
+            margin-bottom: toRem(61);
+        }
+    }
+
+    // .popular__items
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:toRem(50);
+
+        @media (min-width: 48em) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: toRem(34);
+        }
+    }
+
+    &__items--small{
+        grid-template-columns: repeat(1, 1fr);
+        gap: toRem(0);
+        margin-bottom: toRem(42);
+     
+
+        @media (min-width: 48em) {
+            flex: 1 0 50%;
+            margin-bottom: toRem(0);
+        }
+
+        @media (min-width: 68em) {
+           margin-bottom: toRem(35);
+        }
+    }
+
+    // .popular__item
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap:toRem(14);
+
+        @media (min-width: 68em) {
+
+        }
+    }
+
+    // .popular__img
+
+    &__img {
+        overflow: hidden;
+        transition: transform 0.5s;
+
+    }
+
+    &__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s;
+
+        &:hover {
+            transform: scale(1.05)
+        }
+    }
+
+    &__img--small{
+        aspect-ratio: 300 / 339;
+
+        @media (min-width: 48em) {
+            aspect-ratio: 320 / 339;
+        }
+    }
+
+    &__img--big {
+        aspect-ratio: 300 / 339;
+
+        @media (min-width: 48em) {
+        aspect-ratio: 320 / 339;
+        }
+
+        @media (min-width: 68em) {
+            aspect-ratio: 485 / 484;
+        }
+    }
+
+    // .popular__info
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap:toRem(20);
+    }
+
+    // .popular__name
+
+    &__name {
+        font-size: toRem(18);
+        flex-grow: 1;
+    }
+
+    // .popular__price-from
+
+    &__price-from {
+        color: $colorLightDark;
+        font-family: 'Carme';
+        font-size: toRem(15);
+        flex-shrink: 0;
+        align-self: flex-start;
+    }
+
+    &__description-block{
+        display: flex;
+        flex-direction: column;
+        gap: toRem(19);
+
+        @media (min-width: 68em) {
+           
+        }
+
+        @media (min-width: 68em) {
+            flex-direction: column;
+        }
+    }
+
+    &__description {
+        font-family: 'Carme';
+        line-height: 1.38;
+       
+
+    }
+
+    // .popular__small-block
+
+    &__small-block {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(19);
+
+        @media (min-width: 48em) {
+            flex-direction: row;
+            gap: toRem(50);
+            align-items: center;
+        }
+            
+        @media (min-width: 68em) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: toRem(19);
+        }
+    }
+
+    .button {
+        width: 100%;
+                            
+        @media (min-width: 48em) {
+            width: fit-content;
+        }
+    }
+}
