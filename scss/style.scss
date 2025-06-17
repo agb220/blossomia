@@ -110,8 +110,6 @@ body {
         font-size: toRem(30);
         font-weight: 300;
         margin-bottom: toRem(38);
-        position: relative;
-        z-index: 5;
       
         @media (min-width: 48em) {
             font-size: toRem(48);
@@ -129,8 +127,6 @@ body {
         display: flex;
         flex-direction: column;
         gap:toRem(38);
-        position: relative;
-        z-index: 5;
 
         @media (min-width: 48em) {
             align-items: start;
@@ -370,16 +366,13 @@ body {
     &__items--small{
         grid-template-columns: repeat(1, 1fr);
         gap: toRem(0);
-        margin-bottom: toRem(42);
      
 
         @media (min-width: 48em) {
             flex: 1 0 50%;
-            margin-bottom: toRem(0);
         }
 
         @media (min-width: 68em) {
-           margin-bottom: toRem(35);
         }
     }
 
@@ -487,7 +480,7 @@ body {
     &__small-block {
         display: flex;
         flex-direction: column;
-        gap: toRem(19);
+        gap: toRem(42);
 
         @media (min-width: 48em) {
             flex-direction: row;
@@ -498,7 +491,7 @@ body {
         @media (min-width: 68em) {
             flex-direction: column;
             align-items: flex-start;
-            gap: toRem(19);
+            gap: toRem(40);
         }
     }
 

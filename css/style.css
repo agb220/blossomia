@@ -726,8 +726,6 @@ body {
   font-size: 1.875rem;
   font-weight: 300;
   margin-bottom: 2.375rem;
-  position: relative;
-  z-index: 5;
 }
 @media (min-width: 48em) {
   .hero__title {
@@ -751,8 +749,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2.375rem;
-  position: relative;
-  z-index: 5;
 }
 @media (min-width: 48em) {
   .hero__content {
@@ -998,19 +994,12 @@ body {
 .popular__items--small {
   grid-template-columns: repeat(1, 1fr);
   gap: 0rem;
-  margin-bottom: 2.625rem;
 }
 @media (min-width: 48em) {
   .popular__items--small {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 50%;
             flex: 1 0 50%;
-    margin-bottom: 0rem;
-  }
-}
-@media (min-width: 68em) {
-  .popular__items--small {
-    margin-bottom: 2.1875rem;
   }
 }
 .popular__item {
@@ -1124,7 +1113,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1.1875rem;
+  gap: 2.625rem;
 }
 @media (min-width: 48em) {
   .popular__small-block {
@@ -1147,7 +1136,7 @@ body {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    gap: 1.1875rem;
+    gap: 2.5rem;
   }
 }
 .popular .button {
