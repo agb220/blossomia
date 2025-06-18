@@ -1,21 +1,20 @@
-'use strick'
+"use strick";
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("/components/header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-      });
+  fetch("/components/header.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("header").innerHTML = data;
+    });
 });
-  
+
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("/components/footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("footer").innerHTML = data;
-      });
-  });
-  
+  fetch("/components/footer.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    });
+});
 
 // const menuList = [
 //   { label: "About Us", link: "/about" },
@@ -49,7 +48,6 @@ window.addEventListener("resize", () => {
   }
 });
 
-
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -62,10 +60,9 @@ const observer = new IntersectionObserver(
   { threshold: 0.1 }
 );
 
-document.querySelectorAll(".hero__img-left, .hero__img-right").forEach((el) =>
-  observer.observe(el)
-);
-
+document
+  .querySelectorAll(".hero__img-left, .hero__img-right")
+  .forEach((el) => observer.observe(el));
 
 document.addEventListener("DOMContentLoaded", () => {
   const mobileImage = document.querySelector(".hero__img-mb");
@@ -77,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     {
-      threshold: 0.3, 
+      threshold: 0.3,
     }
   );
 

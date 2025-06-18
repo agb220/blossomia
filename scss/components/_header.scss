@@ -1,257 +1,249 @@
 @use "../_index" as *;
 
 .header {
-    position: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: toRem(29) 0;
+    gap: toRem(10);
+  }
+
+  &__logo {
+    aspect-ratio: 178 / 33;
+    max-width: toRem(178);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 6;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (min-width: 48em) {
+      aspect-ratio: 213 / 33;
+      max-width: toRem(213);
+    }
+  }
+
+  .icon-menu {
+    display: block;
+    width: 26px;
+    height: 20px;
+    position: relative;
+    z-index: 6;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $colorMain;
+      left: 0;
+      transition: 0.3s ease;
+    }
+
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    body.menu-open & {
+      span {
+        width: 0;
+      }
+
+      &::before {
+        transform: rotate(45deg) translateY(-2px);
+        top: 50%;
+      }
+
+      &::after {
+        transform: rotate(-45deg) translateY(1px);
+        bottom: 50%;
+      }
+    }
+  }
+
+  .menu {
+    &__body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: toRem(25);
+      position: fixed;
+      top: toRem(91);
+      left: -100%;
+      width: 100%;
+      height: calc(100vh - toRem(91));
+      background-color: $bgMain;
+      padding: toRem(50) toRem(20);
+      flex-direction: column;
+      transition: left 0.3s ease;
+      z-index: 999;
+      overflow: auto;
+
+      body.menu-open & {
+        left: 0;
+        align-items: flex-start;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &__body::before {
+      content: "";
+      position: fixed;
+      top: toRem(91);
+      left: -100%;
+      width: 100%;
+      height: toRem(91);
+      z-index: 1;
+      transition: all 0.3s;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(20);
+    }
+
+    &__item {
+      font-family: "Shanti";
+      font-size: toRem(18);
+      transition: color 0.3s;
+
+      padding: toRem(10) 0;
+
+      @media (min-width: 48em) {
+        padding: 0 0;
+        font-size: toRem(15);
+      }
+
+      a {
+        color: inherit;
+
+        @media (any-hover: hover), (pointer: fine) {
+          &:hover {
+            text-decoration: underline;
+            color: $colorLight;
+          }
+        }
+      }
+    }
+  }
+
+  &__active {
+    display: flex;
+    align-items: center;
+    gap: toRem(34);
+
+    @media (min-width: 32em) {
+      gap: toRem(27);
+    }
+  }
+
+  &__active--desktop {
+    display: none;
+
+    @media (min-width: 32em) {
+      display: flex;
+    }
+  }
+
+  &__active--mobile {
+    display: flex;
+    align-self: center;
+
+    @media (min-width: 48em) {
+      display: none;
+    }
+  }
+
+  &__cart-mb {
+    @media (min-width: 48em) {
+      display: none;
+    }
+  }
+
+  &__item {
+    width: toRem(24);
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      @media (any-hover: hover), (pointer: fine) {
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 5;
+    transition: 0.4s;
+    backdrop-filter: blur(113.65px);
+    background-color: $bgMain;
+    z-index: -1;
+  }
 
-    &__body {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: toRem(29) 0;
-        gap:toRem(10);
-    }
-
-    &__logo {
-        aspect-ratio: 178 / 33;
-        max-width: toRem(178);
-        flex-shrink: 0;
-        position: relative;
-        z-index: 6;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        @media (min-width: 48em) {
-            aspect-ratio: 213 / 33;
-            max-width: toRem(213);
-        }
-    }
-
+  @media (min-width: 48em) {
     .icon-menu {
-        display: block;
-        width: 26px;
-        height: 20px;
-        position: relative;
-        z-index: 6;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-
-        span,
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: $colorMain;
-            left: 0;
-            transition: 0.3s ease;
-        }
-
-        span {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        &::before {
-            top: 0;
-        }
-
-        &::after {
-            bottom: 0;
-        }
-
-        body.menu-open & {
-            span {
-                width: 0;
-            }
-
-            &::before {
-                transform: rotate(45deg) translateY(-2px);
-                top: 50%;
-            }
-
-            &::after {
-                transform: rotate(-45deg) translateY(1px);
-                bottom: 50%;
-            }
-        }
+      display: none;
     }
 
     .menu {
-      
+      &__body {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding: 0;
+        flex-direction: row;
+        transition: none;
+        overflow: hidden;
+        border: none;
+        box-shadow: none;
+      }
 
-        &__body {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: toRem(25);
-            position: fixed;
-            top: toRem(91);
-            left: -100%;
-            width: 100%;
-            height: calc(100vh - toRem(91));
-            background-color: $bgMain;
-            padding: toRem(50) toRem(20);
-            flex-direction: column;
-            transition: left 0.3s ease;
-            z-index: 999;
-            overflow: auto;
-
-
-            body.menu-open & {
-                left:0;
-                align-items: flex-start;
-                border-top: 1px solid rgba(0, 0, 0, 0.1);
-                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-               
-            }
-        }
-
-        &__body::before {
-                    content: "";
-                    position: fixed;
-                    top: toRem(91);
-                    left: -100%;
-                    width: 100%;
-                    height: toRem(91);
-                    z-index: 1;
-                    transition: all 0.3s;
-        }
-
-        &__list {
-            display: flex;
-            flex-direction: column;
-            gap: toRem(20);
-
-        }
-
-        &__item {
-            font-family: 'Shanti';
-            font-size: toRem(18);
-            transition: color 0.3s;
-
-            padding: toRem(10) 0;
-                        
-                        
-            @media (min-width: 48em) {
-                padding: 0 0;
-                font-size: toRem(15);
-            }
-
-            a {
-                color: inherit;
-
-                @media (any-hover: hover), (pointer: fine) {
-                    &:hover {
-                        text-decoration: underline;
-                        color: $colorLight;
-                    }
-                }
-            }
-        }
-    }
-
-    &__active {
-      display: flex;
-      align-items: center;
-      gap: toRem(34);
-
-        @media (min-width: 32em) {
-            gap: toRem(27);
-        }
-    }
-
-    &__active--desktop{
-        display: none;
-
-        @media (min-width: 32em) {
-            display: flex;
-        }
-    }
-
-    &__active--mobile {
-        display: flex;
-        align-self: center;
-
-    @media (min-width: 48em) {
-        display: none;
+      &__list {
+        flex-direction: row;
+        gap: toRem(49);
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
-
-  &__cart-mb{
-    @media (min-width: 48em) {
-        display: none;
-    }
-  }
-
-    &__item {
-        width: toRem(24);
-        aspect-ratio: 1 / 1;
-        cursor: pointer;
-        transition: opacity 0.3s;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-
-            @media (any-hover: hover), (pointer: fine) {
-                &:hover {
-                    opacity: 0.5;
-                }
-            }
-        }
-    }
-
-    &:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        transition: 0.4s;
-        backdrop-filter: blur(113.65px);
-        background-color: $bgMain;
-        z-index: -1;
-    }
-
-    @media (min-width: 48em) {
-        .icon-menu {
-            display: none; 
-        }
-
-        .menu {
-            &__body {
-                position: static;
-                width: auto;
-                height: auto;
-                background-color: transparent;
-                padding: 0;
-                flex-direction: row;
-                transition: none;
-                overflow:hidden;
-                border:none;
-                box-shadow: none;
-                
-            }
-
-            &__list {
-                flex-direction: row;
-                gap: toRem(49);
-                align-items: center;
-                justify-content: center;
-            }
-
-        }
-    }
 }
