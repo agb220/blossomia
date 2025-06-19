@@ -891,3 +891,142 @@ body {
   &__wrapper {
   }
 }
+
+// First Purchase //
+
+.first-purchase {
+  // .first-purchase__container
+
+  &__container {
+  }
+
+  // .first-purchase__wrapper
+
+  &__wrapper {
+    padding-bottom: toRem(120);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(27);
+
+    @media (min-width: 75em) {
+      gap: toRem(0);
+    }
+  }
+  // .first-purchase__block
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: toRem(37);
+
+    @media (min-width: 75em) {
+      flex-direction: row;
+    }
+  }
+
+  //. first-purchase__block--center
+
+  &__block--center {
+    align-items: center;
+  }
+
+  // .first-purchase__title
+
+  &__title {
+    align-self: flex-start;
+    padding-top: toRem(70);
+  }
+
+  // .first-purchase__image
+
+  &__image {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+
+      @media (any-hover: hover), (pointer: fine) {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // .first-purchase__image-right
+
+  &__image--right {
+    aspect-ratio: 487 / 532;
+    max-height: toRem(532);
+    width: 100%;
+
+    @media (min-width: 75em) {
+      max-width: toRem(487);
+      min-height: toRem(532);
+    }
+  }
+
+  &__image--left {
+    aspect-ratio: 503 / 473;
+    max-height: toRem(473);
+    width: 100%;
+
+    @media (min-width: 75em) {
+      margin-top: toRem(-240);
+      max-width: toRem(503);
+      max-height: toRem(473);
+    }
+  }
+
+  // .first-purchase__info
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(49);
+    width: 100%;
+    padding-top: toRem(11);
+
+    @media (min-width: 75em) {
+      padding-top: toRem(53);
+      max-width: toRem(679);
+      gap: toRem(13);
+    }
+
+    p {
+      font-family: "Carme";
+      line-height: 1.38;
+
+      @media (min-width: 75em) {
+        width: toRem(521);
+        align-self: flex-start;
+      }
+    }
+  }
+
+  .button {
+    // .button__wrapper
+    width: 100%;
+
+    @media (min-width: 75em) {
+      align-self: flex-end;
+      width: fit-content;
+    }
+
+    &__wrapper {
+    }
+  }
+}
+.title-h2 {
+}
+.button {
+  // .button__wrapper
+
+  &__wrapper {
+  }
+}
