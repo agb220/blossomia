@@ -616,6 +616,12 @@ body {
 }
 @media (min-width: 65em) {
   .hero__title {
+    font-size: 3.75rem;
+    max-width: 41.0625rem;
+  }
+}
+@media (min-width: 91em) {
+  .hero__title {
     font-size: 4.375rem;
     max-width: 47.3125rem;
   }
@@ -709,7 +715,7 @@ body {
     display: block;
   }
 }
-@media (min-width: 65em) {
+@media (min-width: 91em) {
   .hero__img-right {
     max-width: 36.6875rem;
   }
@@ -761,7 +767,7 @@ body {
     transform: translateX(0);
   }
 }
-@media (min-width: 62em) and (min-width: 65em) {
+@media (min-width: 62em) and (min-width: 91em) {
   .hero__img-left {
     left: 0;
     transform: translateX(-30%);

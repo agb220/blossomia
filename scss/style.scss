@@ -127,6 +127,11 @@ body {
     }
 
     @media (min-width: 65em) {
+      font-size: toRem(60);
+      max-width: toRem(657);
+    }
+
+    @media (min-width: 91em) {
       font-size: toRem(70);
       max-width: toRem(757);
     }
@@ -203,6 +208,10 @@ body {
   @media (min-width: 65em) {
     max-width: toRem(407);
   }
+
+  // @media (min-width: 91em) {
+  //   max-width: toRem(407);
+  // }
 }
 
 .hero__img-right {
@@ -220,7 +229,11 @@ body {
     display: block;
   }
 
-  @media (min-width: 65em) {
+  // @media (min-width: 65em) {
+  //   max-width: toRem(587);
+  // }
+
+  @media (min-width: 91em) {
     max-width: toRem(587);
   }
 }
@@ -276,7 +289,7 @@ body {
     transform: translateX(0);
   }
 
-  @media (min-width: 65em) {
+  @media (min-width: 91em) {
     .hero__img-left {
       left: 0;
       transform: translateX(-30%);
