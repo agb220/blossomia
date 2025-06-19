@@ -400,17 +400,19 @@ body {
   &__img {
     overflow: hidden;
     transition: transform 0.5s;
-  }
 
-  &__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
 
-    &:hover {
-      transform: scale(1.05);
+      @media (any-hover: hover), (pointer: fine) {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
     }
   }
 
@@ -511,38 +513,9 @@ body {
 
 .about {
   overflow: hidden;
-
   // .about__container
 
   &__container {
-    position: relative;
-  }
-
-  // .about__img-left
-
-  &__img-left {
-    overflow: hidden;
-    aspect-ratio: 514 / 430;
-    max-width: toRem(514);
-    transition: left 0.5s;
-    display: none;
-
-    @media (min-width: 56em) {
-      display: block;
-      position: absolute;
-      top: 35%;
-      left: -20%;
-      max-width: toRem(514);
-    }
-
-    @media (min-width: 63em) {
-      left: -10%;
-    }
-
-    @media (min-width: 74em) {
-      left: 0;
-      max-width: toRem(514);
-    }
   }
 
   // .about__wrapper
@@ -550,26 +523,112 @@ body {
   &__wrapper {
     display: flex;
     flex-direction: column;
-    padding: toRem(64) 0 toRem(55) 0;
+    padding: toRem(64) 0 toRem(64) 0;
+    gap: toRem(40);
 
-    @media (min-width: 56em) {
+    @media (min-width: 75em) {
       padding: toRem(61) 0 toRem(139) 0;
-      gap: toRem(150);
+      gap: toRem(0);
     }
+  }
 
-    @media (min-width: 74em) {
-      gap: toRem(253);
+  // .about__block
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(25);
+
+    @media (min-width: 75em) {
+      flex-direction: row;
+      gap: toRem(25);
     }
+  }
+
+  //.about__block--margin
+
+  &__block--margin {
+    gap: toRem(53);
+
+    @media (min-width: 75em) {
+      gap: toRem(76);
+    }
+  }
+
+  //.about__block--center
+
+  &__block--center {
+    align-items: center;
   }
 
   // .about__title
 
   &__title {
-    max-width: toRem(730);
-    margin-bottom: toRem(25);
+    @media (min-width: 75em) {
+      max-width: toRem(730);
+    }
+  }
 
-    @media (min-width: 56em) {
-      margin-bottom: 0;
+  // .about__img
+
+  &__img {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.5s;
+
+      @media (min-width: 75em) {
+        object-position: center;
+      }
+
+      @media (any-hover: hover), (pointer: fine) {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // .about__img--right
+
+  &__img--right {
+    display: none;
+
+    @media (min-width: 75em) {
+      display: block;
+      aspect-ratio: 514 / 430;
+      max-height: toRem(430);
+      max-width: toRem(514);
+    }
+  }
+
+  // .about__img--left
+
+  &__img--left {
+    aspect-ratio: 514 / 430;
+    width: 100%;
+    max-height: toRem(430);
+
+    @media (min-width: 75em) {
+      margin-top: toRem(-100);
+      max-width: toRem(514);
+    }
+  }
+
+  //.about__img--mb
+
+  &__img--mb {
+    aspect-ratio: 514 / 430;
+    width: 100%;
+    max-height: toRem(430);
+
+    @media (min-width: 75em) {
+      display: none;
     }
   }
 
@@ -580,11 +639,9 @@ body {
     flex-direction: column;
     gap: toRem(42);
 
-    margin-bottom: toRem(55);
-
-    @media (min-width: 56em) {
+    @media (min-width: 75em) {
+      padding-top: toRem(66);
       align-items: end;
-      margin-bottom: toRem(0);
       gap: toRem(43);
     }
   }
@@ -592,16 +649,9 @@ body {
   // .about__text
 
   &__text {
-    // max-width: toRem(611);
     align-self: flex-end;
-    margin-top: toRem(35);
 
-    @media (min-width: 56em) {
-      margin-top: 0;
-      max-width: toRem(511);
-    }
-
-    @media (min-width: 74em) {
+    @media (min-width: 75em) {
       max-width: toRem(611);
     }
 
@@ -612,55 +662,22 @@ body {
     }
   }
 
-  // .about__img-right
+  .button {
+    width: 100%;
 
-  &__img-right {
-    overflow: hidden;
-    aspect-ratio: 446 / 375;
-    display: none;
-
-    @media (min-width: 56em) {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: -5%;
-      max-width: toRem(350);
-    }
-
-    @media (min-width: 74em) {
-      right: 0;
-      max-width: toRem(446);
-    }
-  }
-
-  &__img-mb {
-    overflow: hidden;
-    max-height: toRem(302);
-
-    @media (min-width: 56em) {
-      display: none;
+    @media (min-width: 75em) {
+      width: fit-content;
+      align-self: flex-end;
     }
   }
 }
-
 .title-h2 {
 }
-
 .button {
-  width: 100%;
+  // .button__wrapper
 
-  @media (min-width: 48em) {
-    width: fit-content;
+  &__wrapper {
   }
-}
-
-.about__img-left img,
-.about__img-right img,
-.about__img-mb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /*Floral section*/

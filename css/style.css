@@ -858,8 +858,10 @@ body {
   display: block;
   transition: transform 0.5s;
 }
-.popular__img img:hover {
-  transform: scale(1.05);
+@media (any-hover: hover), (pointer: fine) {
+  .popular__img img:hover {
+    transform: scale(1.05);
+  }
 }
 .popular__img--small {
   aspect-ratio: 300/339;
@@ -946,85 +948,117 @@ body {
 .about {
   overflow: hidden;
 }
-.about__container {
-  position: relative;
-}
-.about__img-left {
-  overflow: hidden;
-  aspect-ratio: 514/430;
-  max-width: 32.125rem;
-  transition: left 0.5s;
-  display: none;
-}
-@media (min-width: 56em) {
-  .about__img-left {
-    display: block;
-    position: absolute;
-    top: 35%;
-    left: -20%;
-    max-width: 32.125rem;
-  }
-}
-@media (min-width: 63em) {
-  .about__img-left {
-    left: -10%;
-  }
-}
-@media (min-width: 74em) {
-  .about__img-left {
-    left: 0;
-    max-width: 32.125rem;
-  }
-}
 .about__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 4rem 0 3.4375rem 0;
+  padding: 4rem 0 4rem 0;
+  gap: 2.5rem;
 }
-@media (min-width: 56em) {
+@media (min-width: 75em) {
   .about__wrapper {
     padding: 3.8125rem 0 8.6875rem 0;
-    gap: 9.375rem;
+    gap: 0rem;
   }
 }
-@media (min-width: 74em) {
-  .about__wrapper {
-    gap: 15.8125rem;
+.about__block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+}
+@media (min-width: 75em) {
+  .about__block {
+    flex-direction: row;
+    gap: 1.5625rem;
   }
 }
-.about__title {
-  max-width: 45.625rem;
-  margin-bottom: 1.5625rem;
+.about__block--margin {
+  gap: 3.3125rem;
 }
-@media (min-width: 56em) {
+@media (min-width: 75em) {
+  .about__block--margin {
+    gap: 4.75rem;
+  }
+}
+.about__block--center {
+  align-items: center;
+}
+@media (min-width: 75em) {
   .about__title {
-    margin-bottom: 0;
+    max-width: 45.625rem;
+  }
+}
+.about__img {
+  overflow: hidden;
+}
+.about__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  display: block;
+  transition: transform 0.5s;
+}
+@media (min-width: 75em) {
+  .about__img img {
+    -o-object-position: center;
+       object-position: center;
+  }
+}
+@media (any-hover: hover), (pointer: fine) {
+  .about__img img:hover {
+    transform: scale(1.05);
+  }
+}
+.about__img--right {
+  display: none;
+}
+@media (min-width: 75em) {
+  .about__img--right {
+    display: block;
+    aspect-ratio: 514/430;
+    max-height: 26.875rem;
+    max-width: 32.125rem;
+  }
+}
+.about__img--left {
+  aspect-ratio: 514/430;
+  width: 100%;
+  max-height: 26.875rem;
+}
+@media (min-width: 75em) {
+  .about__img--left {
+    margin-top: -6.25rem;
+    max-width: 32.125rem;
+  }
+}
+.about__img--mb {
+  aspect-ratio: 514/430;
+  width: 100%;
+  max-height: 26.875rem;
+}
+@media (min-width: 75em) {
+  .about__img--mb {
+    display: none;
   }
 }
 .about__info {
   display: flex;
   flex-direction: column;
   gap: 2.625rem;
-  margin-bottom: 3.4375rem;
 }
-@media (min-width: 56em) {
+@media (min-width: 75em) {
   .about__info {
+    padding-top: 4.125rem;
     align-items: end;
-    margin-bottom: 0rem;
     gap: 2.6875rem;
   }
 }
 .about__text {
   align-self: flex-end;
-  margin-top: 2.1875rem;
 }
-@media (min-width: 56em) {
-  .about__text {
-    margin-top: 0;
-    max-width: 31.9375rem;
-  }
-}
-@media (min-width: 74em) {
+@media (min-width: 75em) {
   .about__text {
     max-width: 38.1875rem;
   }
@@ -1034,54 +1068,15 @@ body {
   line-height: 1.38;
   padding-bottom: 0.625rem;
 }
-.about__img-right {
-  overflow: hidden;
-  aspect-ratio: 446/375;
-  display: none;
-}
-@media (min-width: 56em) {
-  .about__img-right {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -5%;
-    max-width: 21.875rem;
-  }
-}
-@media (min-width: 74em) {
-  .about__img-right {
-    right: 0;
-    max-width: 27.875rem;
-  }
-}
-.about__img-mb {
-  overflow: hidden;
-  max-height: 18.875rem;
-}
-@media (min-width: 56em) {
-  .about__img-mb {
-    display: none;
-  }
-}
-
-.button {
+.about .button {
   width: 100%;
 }
-@media (min-width: 48em) {
-  .button {
+@media (min-width: 75em) {
+  .about .button {
     width: -moz-fit-content;
     width: fit-content;
+    align-self: flex-end;
   }
-}
-
-.about__img-left img,
-.about__img-right img,
-.about__img-mb img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
 }
 
 /*Floral section*/
