@@ -989,6 +989,12 @@ body {
 }
 .about__img {
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 5s ease;
+}
+.about__img.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .about__img img {
   width: 100%;
@@ -1289,6 +1295,11 @@ body {
 }
 .first-purchase__image {
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 5s ease;
+}
+.first-purchase__image.visible {
+  opacity: 1;
 }
 .first-purchase__image img {
   width: 100%;
@@ -1412,6 +1423,11 @@ body {
 }
 .follow__image {
   display: none;
+  opacity: 0;
+  transition: opacity 5s ease;
+}
+.follow__image.visible {
+  opacity: 1;
 }
 @media (min-width: 49em) {
   .follow__image {
@@ -1457,6 +1473,11 @@ body {
 .follow__mb-img {
   aspect-ratio: 300/318;
   max-height: 19.875rem;
+  opacity: 0;
+  transition: opacity 5s ease;
+}
+.follow__mb-img.visible {
+  opacity: 1;
 }
 .follow__mb-img img {
   width: 100%;

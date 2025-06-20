@@ -65,20 +65,23 @@ document
   .forEach((el) => observer.observe(el));
 
 document.addEventListener("DOMContentLoaded", () => {
-  const mobileImage = document.querySelector(".hero__img-mb");
+  const animatedImages = document.querySelectorAll(
+    ".hero__img-mb, .about__img-left, .about__img, .about__img--mb, .first-purchase__image, .follow__image, .follow__mb-img"
+  );
 
   const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        mobileImage.classList.add("visible");
-      }
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
     },
     {
       threshold: 0.3,
     }
   );
 
-  if (mobileImage) {
-    observer.observe(mobileImage);
-  }
+  animatedImages.forEach((img) => observer.observe(img));
 });
