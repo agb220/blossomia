@@ -574,6 +574,14 @@ body {
   &__img {
     overflow: hidden;
 
+    opacity: 0;
+    transition: opacity 5s ease;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -959,6 +967,13 @@ body {
   &__image {
     overflow: hidden;
 
+    opacity: 0;
+    transition: opacity 5s ease;
+
+    &.visible {
+      opacity: 1;
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -1132,6 +1147,13 @@ body {
   &__image {
     display: none;
 
+    opacity: 0;
+    transition: opacity 5s ease;
+
+    &.visible {
+      opacity: 1;
+    }
+
     @media (min-width: 49em) {
       overflow: hidden;
       aspect-ratio: 326/ 334;
@@ -1182,6 +1204,13 @@ body {
   &__mb-img {
     aspect-ratio: 300 / 318;
     max-height: toRem(318);
+
+    opacity: 0;
+    transition: opacity 5s ease;
+
+    &.visible {
+      opacity: 1;
+    }
 
     img {
       width: 100%;
