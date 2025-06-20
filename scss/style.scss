@@ -89,6 +89,51 @@ body {
   }
 }
 
+// Bread Crumbs //
+
+.bread-crumbs {
+  margin: toRem(88) 0 toRem(33) 0;
+
+  // .bread-crumbs__container
+
+  &__container {
+  }
+
+  // .bread-crumbs__list
+
+  &__list {
+    display: flex;
+    gap: toRem(3);
+  }
+
+  // .bread-crumbs__item
+
+  &__item {
+    color: rgba(44, 44, 44, 0.65);
+    font-family: "Carme";
+    font-size: toRem(16);
+  }
+
+  // .bread-crumbs__link
+
+  &__link {
+    cursor: pointer;
+    display: flex;
+    gap: toRem(3);
+
+    @media (any-hover: hover), (pointer: fine) {
+      &:hover {
+        color: $colorLight;
+      }
+    }
+
+    img {
+      aspect-ratio: 1 / 1;
+      max-width: toRem(16);
+    }
+  }
+}
+
 /* Hero section */
 
 .main-margin-top {
