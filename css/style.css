@@ -1,3 +1,13 @@
+html,
+body,
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 *,
 *::before,
 *::after {
@@ -577,16 +587,28 @@ body {
 }
 
 .bread-crumbs {
-  margin: 5.5rem 0 2.0625rem 0;
+  padding: 5.5rem 0 2.0625rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.bread-crumbs::-webkit-scrollbar {
+  display: none;
+}
+.bread-crumbs__container {
+  overflow-x: auto;
 }
 .bread-crumbs__list {
   display: flex;
   gap: 0.1875rem;
+  white-space: nowrap;
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 .bread-crumbs__item {
   color: rgba(44, 44, 44, 0.65);
   font-family: "Carme";
   font-size: 1rem;
+  flex-shrink: 0;
 }
 .bread-crumbs__link {
   cursor: pointer;
