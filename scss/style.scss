@@ -92,13 +92,17 @@ body {
 // Bread Crumbs //
 
 .bread-crumbs {
-  padding: toRem(88) 0 toRem(33) 0;
+  padding: toRem(26) 0 toRem(23) 0;
 
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; // Firefox
 
   &::-webkit-scrollbar {
     display: none; // Chrome, Safari
+
+    @media (min-width: 47em) {
+      padding: toRem(78) 0 toRem(23) 0;
+    }
   }
 
   // .bread-crumbs__container
@@ -110,6 +114,7 @@ body {
   // .bread-crumbs__list
 
   &__list {
+    padding: toRem(10) 0;
     display: flex;
     gap: toRem(3);
     white-space: nowrap;
@@ -141,6 +146,94 @@ body {
     img {
       aspect-ratio: 1 / 1;
       max-width: toRem(16);
+    }
+  }
+}
+
+// Dropdowns //
+
+.dropdown {
+  position: relative;
+
+  &.active {
+    .dropdown__list {
+      opacity: 1;
+      visibility: visible;
+      display: flex;
+      flex-direction: column;
+      gap: toRem(5);
+    }
+
+    .dropdown__arrow {
+      transform: rotate(-180deg);
+    }
+  }
+
+  // .dropdown__title
+
+  &__title {
+    color: $colorBlack;
+    font-size: toRem(16);
+    font-weight: 300;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  // .dropdown__arrow
+
+  &__arrow {
+    transition: transform 0.3s;
+    width: 12px;
+    height: auto;
+    display: inline-block;
+  }
+
+  // .dropdown__list
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    width: toRem(150);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background-color: $bgLight;
+    padding: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 10;
+    display: none;
+
+    @media (min-width: 48em) {
+      width: toRem(200);
+    }
+  }
+
+  // .dropdown__list--sort
+
+  &__list--sort {
+    right: 0;
+    @media (min-width: 48em) {
+      left: 0;
+    }
+  }
+
+  // .dropdown__item
+
+  &__item {
+    padding: 5px;
+    font-size: toRem(14);
+    font-family: "Carme";
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    @media (any-hover: hover), (pointer: fine) {
+      &:hover {
+        background-color: $bgMain;
+      }
     }
   }
 }
@@ -1279,5 +1372,273 @@ body {
   // .follow__text
 
   &__text {
+  }
+}
+
+// Catalog //
+
+.catalog {
+  // .catalog__container
+
+  &__container {
+  }
+
+  // .catalog__title
+
+  &__title {
+    color: $colorBlack;
+    font-size: toRem(50);
+    font-weight: 300;
+    margin-bottom: toRem(35);
+
+    @media (min-width: 47em) {
+      margin-bottom: toRem(54);
+    }
+  }
+
+  // .catalog__blocks
+
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(51);
+    padding: toRem(5) 0;
+
+    @media (min-width: 47em) {
+      gap: toRem(10);
+    }
+  }
+
+  // .catalog__filters
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(20);
+
+    @media (min-width: 47em) {
+      justify-content: space-between;
+      gap: toRem(48);
+    }
+  }
+
+  // .catalog__sort
+
+  &__sort {
+    @media (min-width: 47em) {
+      align-self: flex-end;
+    }
+  }
+
+  // .catalog__products
+
+  &__products {
+    padding: toRem(70) 0 toRem(108) 0;
+
+    @media (min-width: 47em) {
+      padding: toRem(90) 0 toRem(112) 0;
+    }
+  }
+
+  // .catalog__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: toRem(45);
+    padding-bottom: toRem(81);
+
+    @media (min-width: 34em) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: toRem(30);
+      row-gap: toRem(25);
+    }
+
+    @media (min-width: 47em) {
+      padding-bottom: toRem(81);
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: toRem(45);
+      column-gap: toRem(20);
+
+      > *:nth-child(5) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+  }
+}
+
+.item {
+  // .item__link
+
+  &__link {
+    position: relative;
+  }
+
+  // .item__link--big
+
+  @media (min-width: 47em) {
+    &__link--big {
+      min-height: 96%;
+    }
+  }
+
+  // .active
+
+  .active {
+    position: absolute;
+    z-index: 3;
+    bottom: toRem(25);
+    right: toRem(20);
+  }
+
+  // .item__info
+
+  &__info {
+  }
+
+  // .item__active
+
+  &__active {
+  }
+
+  // .item__name
+
+  &__name {
+  }
+
+  // .item__icons
+
+  &__icons {
+  }
+
+  // .item__price
+
+  &__price {
+  }
+}
+.icon {
+  // .icon__button
+
+  &__button {
+  }
+
+  // .icon__item
+
+  &__item {
+  }
+
+  // .icon__button--bg
+  &__button--bg {
+    background-color: $bgLight;
+    padding: toRem(5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+
+    @media (any-hover: hover), (pointer: fine) {
+      &:hover {
+        background-color: $bgMain;
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: toRem(45);
+  // .pagination__arrow
+
+  &__arrow {
+  }
+
+  // .pagination__dots
+
+  &__dots {
+    display: flex;
+    gap: toRem(15);
+  }
+}
+.arrow {
+  border: 1px solid $bgLight;
+  padding: toRem(10) toRem(8);
+  cursor: pointer;
+
+  @media (any-hover: hover), (pointer: fine) {
+    &:hover {
+      background-color: $bgLight;
+    }
+  }
+
+  // .arrow_prev
+
+  &_prev {
+    aspect-ratio: 25 / 25;
+    max-width: toRem(25);
+    flex-shrink: 0;
+
+    img {
+      transform: rotate(-180deg);
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  // .arrow_next
+
+  &_next {
+    aspect-ratio: 25 / 25;
+    max-width: toRem(25);
+    flex-shrink: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  // .arrow__wrapper
+
+  &__wrapper {
+    max-width: toRem(25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: toRem(25);
+    padding: toRem(8);
+    background-color: $bgLight;
+    transition: background-color 0.3s;
+  }
+}
+.dot {
+  // .dot__item
+
+  &__item {
+    color: $colorLightDark;
+    font-size: toRem(18);
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 9.18px;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    @media (any-hover: hover), (pointer: fine) {
+      &:hover {
+        color: $colorLight;
+      }
+    }
+  }
+
+  // .dot__item--current
+
+  &__item--current {
+    color: $colorBlack;
   }
 }

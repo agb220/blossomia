@@ -38,6 +38,468 @@
         <section class="catalog">
           <div class="catalog__container">
             <h1 class="catalog__title">Catalog</h1>
+            <div class="catalog__blocks">
+              <div class="catalog__filters">
+                <div class="dropdown">
+                  <button class="dropdown__title" type="button">
+                    Color
+                    <span class="dropdown__arrow">
+                      <svg
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.33335 1.66667L6.00002 6.33334L10.6667 1.66667"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item">All</li>
+                    <li class="dropdown__item">Pink</li>
+                    <li class="dropdown__item">White</li>
+                    <li class="dropdown__item">Red</li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <button class="dropdown__title" type="button">
+                    Type
+                    <span class="dropdown__arrow">
+                      <svg
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.33335 1.66667L6.00002 6.33334L10.6667 1.66667"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item">All</li>
+                    <li class="dropdown__item">Type 1</li>
+                    <li class="dropdown__item">Type 2</li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <button class="dropdown__title" type="button">
+                    Collection
+                    <span class="dropdown__arrow">
+                      <svg
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.33335 1.66667L6.00002 6.33334L10.6667 1.66667"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item">All</li>
+                    <li class="dropdown__item">Collection 1</li>
+                    <li class="dropdown__item">Collection 2</li>
+                    <li class="dropdown__item">Collection 3</li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <button class="dropdown__title" type="button">
+                    Price
+                    <span class="dropdown__arrow">
+                      <svg
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.33335 1.66667L6.00002 6.33334L10.6667 1.66667"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item">All</li>
+                    <li class="dropdown__item">Price 50</li>
+                    <li class="dropdown__item">Collection 20</li>
+                    <li class="dropdown__item">Collection 10</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="catalog__sort">
+                <div class="dropdown">
+                  <button class="dropdown__title" type="button">
+                    Sort
+                    <span class="dropdown__arrow">
+                      <svg
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.33335 1.66667L6.00002 6.33334L10.6667 1.66667"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul class="dropdown__list dropdown__list--sort">
+                    <li class="dropdown__item">All</li>
+                    <li class="dropdown__item">Popular</li>
+                    <li class="dropdown__item">Expensive</li>
+                    <li class="dropdown__item">Cheaper</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="catalog__products">
+              <ul class="catalog__list">
+                <li class="item">
+                  <a href="#" class="item__link">
+                    <img
+                      src="../images/products/product1.avif"
+                      alt="Eternal Elegance"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Eternal Elegance</a>
+                      </h4>
+                      <div class="item__price">80 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item">
+                  <a href="#" class="item__link">
+                    <img
+                      src="../images/products/product2.avif"
+                      alt="Dazzling Dreams"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Dazzling Dreams</a>
+                      </h4>
+                      <div class="item__price">90 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item">
+                  <a href="#" class="item__link">
+                    <img
+                      src="../images/products/product3.avif"
+                      alt="Serenity Blooms"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Serenity Blooms</a>
+                      </h4>
+                      <div class="item__price">60 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item">
+                  <a href="#" class="item__link">
+                    <img
+                      src="../images/products/product4.avif"
+                      alt="Radiant Rhapsody"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Radiant Rhapsody</a>
+                      </h4>
+                      <div class="item__price">55 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item">
+                  <a href="#" class="item__link item__link--big">
+                    <img
+                      src="../images/products/product5.avif"
+                      alt="Enchanting Oasis"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Enchanting Oasis</a>
+                      </h4>
+                      <div class="item__price">105 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item">
+                  <a href="#" class="item__link">
+                    <img
+                      src="../images/products/product6.avif"
+                      alt="Burst of Bliss"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Burst of Bliss</a>
+                      </h4>
+                      <div class="item__price">95 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item">
+                  <a href="#" class="item__link">
+                    <img
+                      src="../images/products/product7.avif"
+                      alt="Scented Splendor"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Scented Splendor</a>
+                      </h4>
+                      <div class="item__price">77 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item">
+                  <a href="#" class="item__link">
+                    <img
+                      src="../images/products/product8.avif"
+                      alt="Harmony Bouquet"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Harmony Bouquet</a>
+                      </h4>
+                      <div class="item__price">55 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item">
+                  <a href="#" class="item__link">
+                    <img
+                      src="../images/products/product9.avif"
+                      alt="Petals of Joy"
+                    />
+                    <div class="active item__icons icon">
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/favourite.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                      <button class="icon__button icon__button--bg">
+                        <img
+                          class="icon__item"
+                          src="../images/icon/cart.svg"
+                          alt="Wishlist icon"
+                        />
+                      </button>
+                    </div>
+                  </a>
+                  <div class="item__info">
+                    <div class="item__active">
+                      <h4 class="item__name">
+                        <a href="#">Petals of Joy</a>
+                      </h4>
+                      <div class="item__price">65 <span>Euro</span></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="pagination">
+                <div class="pagination__arrow arrow">
+                  <div class="arrow__wrapper">
+                    <div class="arrow_prev">
+                      <img
+                        src="../images/icon/arrow-right.svg"
+                        alt="Arrow Pagination Previous Page"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="pagination__dots dot">
+                  <div class="dot__item dot__item--current">1</div>
+                  <div class="dot__item">2</div>
+                  <div class="dot__item">3</div>
+                </div>
+                <div class="pagination__arrow arrow">
+                  <div class="arrow__wrapper">
+                    <div class="arrow_next">
+                      <img
+                        src="../images/icon/arrow-right.svg"
+                        alt="Arrow Pagination Next Page"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

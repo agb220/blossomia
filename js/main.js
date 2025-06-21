@@ -26,6 +26,19 @@ function documentActions(e) {
   }
 }
 
+document.addEventListener("click", function (e) {
+  const dropdown = e.target.closest(".dropdown");
+  if (e.target.closest(".dropdown__title")) {
+    dropdown.classList.toggle("active");
+  } else {
+    document.querySelectorAll(".dropdown").forEach((drop) => {
+      if (drop !== dropdown) {
+        drop.classList.remove("active");
+      }
+    });
+  }
+});
+
 window.addEventListener("resize", () => {
   if (window.innerWidth >= 768) {
     document.body.classList.remove("menu-open");
