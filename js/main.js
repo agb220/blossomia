@@ -82,3 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animatedImages.forEach((img) => observer.observe(img));
 });
+
+document.querySelectorAll(".icon__button").forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});

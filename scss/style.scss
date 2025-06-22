@@ -1527,27 +1527,35 @@ body {
 }
 
 .item {
-  // .item__link
+  // .item__wrapper
 
-  &__link {
+  &__wrapper {
     position: relative;
   }
 
-  // .item__link--big
+  // .item__wrapper--big
 
   @media (min-width: 47em) {
-    &__link--big {
+    overflow: hidden;
+    &__wrapper--big {
       min-height: 96%;
     }
+  }
+
+  // .item__link
+
+  &__link {
+    height: 100%;
   }
 
   // .active
 
   .active {
     position: absolute;
-    z-index: 3;
+    z-index: 15;
     bottom: toRem(25);
     right: toRem(20);
+    pointer-events: auto;
   }
 
   // .item__info

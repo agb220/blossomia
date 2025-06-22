@@ -1736,19 +1736,26 @@ body {
   }
 }
 
-.item__link {
+.item__wrapper {
   position: relative;
 }
 @media (min-width: 47em) {
-  .item__link--big {
+  .item {
+    overflow: hidden;
+  }
+  .item__wrapper--big {
     min-height: 96%;
   }
 }
+.item__link {
+  height: 100%;
+}
 .item .active {
   position: absolute;
-  z-index: 3;
+  z-index: 15;
   bottom: 1.5625rem;
   right: 1.25rem;
+  pointer-events: auto;
 }
 .icon__button--bg {
   background-color: #dbccba;
