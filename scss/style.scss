@@ -1895,11 +1895,6 @@ body {
   }
 }
 .item {
-  max-height: toRem(420);
-
-  @media (min-width: 61em) {
-    max-height: 100%;
-  }
   // .item__link
 
   &__link {
@@ -1928,6 +1923,15 @@ body {
   // .item__price
 
   &__price {
+  }
+}
+
+//.item--see-also
+.item--see-also {
+  max-height: toRem(420);
+
+  @media (min-width: 61em) {
+    max-height: 100%;
   }
 }
 .active {

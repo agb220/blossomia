@@ -1968,11 +1968,11 @@ body {
   }
 }
 
-.item {
+.item--see-also {
   max-height: 26.25rem;
 }
 @media (min-width: 61em) {
-  .item {
+  .item--see-also {
     max-height: 100%;
   }
 }
