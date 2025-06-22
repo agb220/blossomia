@@ -146,6 +146,13 @@ body {
     img {
       aspect-ratio: 1 / 1;
       max-width: toRem(16);
+      object-fit: cover;
+
+      @media (any-hover: hover), (pointer: fine) {
+        &:hover {
+          filter: brightness(0.5);
+        }
+      }
     }
   }
 }
@@ -235,6 +242,56 @@ body {
         background-color: $bgMain;
       }
     }
+  }
+}
+
+// Quantity btn //
+
+.quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid $bgLight;
+  padding: 13px 7px;
+  width: fit-content;
+  user-select: none;
+  transition: border-color 0.3s;
+
+  @media (any-hover: hover), (pointer: fine) {
+    &:hover {
+      border-color: $colorLight;
+    }
+  }
+
+  // .quantity__btn
+
+  &__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: toRem(19);
+    font-weight: 300;
+    line-height: 1.38;
+    text-transform: capitalize;
+    min-width: toRem(11);
+    transition: color 0.3s;
+
+    @media (any-hover: hover), (pointer: fine) {
+      &:hover {
+        color: $colorLight;
+      }
+    }
+  }
+
+  // .quantity__value
+
+  &__value {
+    text-align: center;
+    margin: 0 toRem(15);
+    color: $colorBlack;
+    font-size: toRem(19);
+    font-weight: 700;
+    line-height: 1.38;
+    text-transform: capitalize;
   }
 }
 
@@ -1568,6 +1625,7 @@ body {
   border: 1px solid $bgLight;
   padding: toRem(10) toRem(8);
   cursor: pointer;
+  transition: background-color 0.3s;
 
   @media (any-hover: hover), (pointer: fine) {
     &:hover {
@@ -1587,6 +1645,7 @@ body {
       height: 100%;
       width: 100%;
       display: block;
+      object-fit: cover;
     }
   }
 
@@ -1601,6 +1660,7 @@ body {
       height: 100%;
       width: 100%;
       display: block;
+      object-fit: cover;
     }
   }
 
@@ -1640,5 +1700,159 @@ body {
 
   &__item--current {
     color: $colorBlack;
+  }
+}
+
+// Product page //
+
+.product {
+  padding: toRem(9) 0 toRem(69) 0;
+
+  @media (min-width: 61em) {
+    padding: toRem(30) 0 toRem(131) 0;
+  }
+  // .product__container
+
+  &__container {
+  }
+
+  // .product__wrapper
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(31);
+    justify-content: space-between;
+
+    @media (min-width: 61em) {
+      flex-direction: row;
+    }
+  }
+
+  // .product__img
+
+  &__img {
+    overflow: hidden;
+    aspect-ratio: 580 / 567;
+    flex-shrink: 0;
+    max-height: toRem(350);
+
+    @media (min-width: 61em) {
+      max-width: toRem(580);
+      max-height: 100%;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.5s;
+
+      @media (any-hover: hover), (pointer: fine) {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // .product__details
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: toRem(31);
+
+    @media (min-width: 61em) {
+      gap: toRem(71);
+    }
+  }
+
+  // .product__info
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: toRem(27);
+  }
+
+  // .product__name
+
+  &__name {
+    @media (min-width: 61em) {
+      padding-top: toRem(20);
+    }
+  }
+
+  // .product__price
+
+  &__price {
+    font-family: "Carme";
+    font-size: toRem(25);
+  }
+
+  // .product__blocks
+
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: toRem(34);
+  }
+
+  // .product__block
+
+  &__block {
+  }
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: toRem(10);
+
+  // .block__title
+
+  &__title {
+    font-size: toRem(19);
+    font-weight: 700;
+    line-height: 1.38;
+    text-transform: capitalize;
+  }
+
+  p {
+    color: #535353;
+    font-family: "Carme";
+    font-size: toRem(15);
+    line-height: 1.38;
+  }
+
+  // .block__inputs
+
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(20);
+  }
+}
+.quantity {
+  // .quantity__btn
+
+  &__btn {
+  }
+
+  // .quantity__value
+
+  &__value {
+  }
+}
+.button {
+  // .button__wrapper
+
+  &__wrapper {
   }
 }
