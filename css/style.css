@@ -1983,3 +1983,248 @@ body {
     max-height: 100%;
   }
 }
+
+.cart {
+  margin-bottom: 5.5625rem;
+}
+@media (min-width: 55em) {
+  .cart {
+    margin-bottom: 13.6875rem;
+  }
+}
+.cart__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: space-between;
+}
+@media (min-width: 55em) {
+  .cart__wrapper {
+    gap: 3.125rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 75em) {
+  .cart__wrapper {
+    gap: 13.8125rem;
+  }
+}
+@media (min-width: 55em) {
+  .cart__block {
+    flex: 1 0 40%;
+  }
+}
+.cart__title {
+  color: #000000;
+  font-size: 1.875rem;
+  margin-bottom: 0.8125rem;
+}
+.cart__items {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8125rem;
+  justify-content: space-between;
+}
+@media (min-width: 55em) {
+  .cart__items {
+    gap: 1.25rem;
+  }
+}
+.product-cart__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9375rem;
+  align-items: center;
+  padding-top: 1.4375rem;
+  border-top: 2px solid #dbccba;
+}
+@media (min-width: 55em) {
+  .product-cart__item {
+    flex-direction: row;
+    gap: 1.3125rem;
+    padding-top: 2.0625rem;
+    justify-content: space-between;
+  }
+}
+.product-cart__img {
+  aspect-ratio: 174/172;
+  max-height: 17.375rem;
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+@media (min-width: 55em) {
+  .product-cart__img {
+    max-width: 10.875rem;
+    max-height: auto;
+  }
+}
+.product-cart__img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+@media (any-hover: hover), (pointer: fine) {
+  .product-cart__img img:hover {
+    transform: scale(1.05);
+  }
+}
+.product-cart__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1875rem;
+  justify-content: space-between;
+  width: 100%;
+}
+.product-cart__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-cart__name {
+  color: #000000;
+  font-size: 1.125rem;
+  transition: color 0.3s;
+}
+@media (any-hover: hover), (pointer: fine) {
+  .product-cart__name:hover {
+    color: #dbccba;
+  }
+}
+.product-cart__price {
+  color: #000000;
+  font-family: "Carme";
+  font-size: 1.125rem;
+}
+.product-cart__description {
+  color: #535353;
+  font-family: "Carme";
+  font-size: 0.8125rem;
+  line-height: 1.38;
+}
+.product-cart__active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quantity-bg {
+  display: flex;
+  gap: 0.5625rem;
+  align-items: center;
+}
+.quantity-bg__btn {
+  background-color: #dbccba;
+  padding: 0.125rem 0.5rem;
+  transition: color 0.3s;
+}
+@media (any-hover: hover), (pointer: fine) {
+  .quantity-bg__btn:hover {
+    color: white;
+  }
+}
+.quantity-bg__value {
+  color: #000000;
+  font-weight: 300;
+}
+
+.delete-btn {
+  aspect-ratio: 1/1;
+  max-width: 1.5625rem;
+  padding: 0.3125rem;
+  transition: background-color 0.3s;
+}
+@media (any-hover: hover), (pointer: fine) {
+  .delete-btn:hover {
+    background-color: #dbccba;
+  }
+}
+.delete-btn img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.total-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3125rem;
+  padding: 3.3125rem 2.125rem 1.3125rem 2.25rem;
+  border: 2px solid #dbccba;
+}
+.total-block__products {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-bottom: 2.5625rem;
+  border-bottom: 2px solid #dbccba;
+}
+.total-block__delivery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.3125rem;
+}
+.total-block__total {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.0625rem;
+}
+.total-block .button {
+  align-self: center;
+}
+.product-total__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.625rem;
+  color: #000;
+  font-size: 1.125rem;
+}
+.product-total__price {
+  font-family: "Carme";
+}
+
+.delivery-item__delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.625rem;
+  color: #000;
+  font-size: 1.125rem;
+}
+.delivery-item__desc {
+  font-family: "Carme";
+}
+.delivery-item__sale {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.625rem;
+  color: #000;
+  font-size: 1.125rem;
+}
+
+.block-total {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1.625rem;
+  margin-bottom: 2.5rem;
+}
+.block-total__title {
+  color: #000000;
+  font-size: 1.375rem;
+}
+.block-total__price {
+  color: #000000;
+  font-family: "Carme";
+  font-size: 1.125rem;
+}
