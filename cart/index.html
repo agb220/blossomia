@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shanti:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Carme:regular"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Blossomia Catalog</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="header"></div>
+      <main class="main-margin-top">
+        <section class="cart">
+          <div class="cart__container">
+            <div class="cart__wrapper">
+              <div class="cart__block">
+                <h2 class="cart__title">Basket</h2>
+                <ul class="cart__items product-cart">
+                  <li class="product-cart__item">
+                    <a href="/blooming-symphony/" class="product-cart__img">
+                      <img
+                        src="../images/cart/cart1.avif"
+                        alt="Garden Medley"
+                      />
+                    </a>
+                    <div class="product-cart__details">
+                      <div class="product-cart__info">
+                        <h4 class="product-cart__name">
+                          <a href="/blooming-symphony/">Garden Medley</a>
+                        </h4>
+                        <p class="product-cart__price">100€</p>
+                      </div>
+                      <p class="product-cart__description">
+                        Vibrant roses, delicate lilies, sprigs of fragrant
+                        lavender, all wrapped in lush greenery
+                      </p>
+                      <div class="product-cart__active">
+                        <div class="quantity-bg">
+                          <button class="quantity-bg__btn">-</button>
+                          <span class="quantity-bg__value">1</span>
+                          <button class="quantity-bg__btn">+</button>
+                        </div>
+                        <button class="delete-btn">
+                          <img
+                            src="../images/icon/delete.svg"
+                            alt="Delete icon"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="product-cart__item">
+                    <a href="/blooming-symphony/" class="product-cart__img">
+                      <img src="../images/cart/cart2.avif" alt="Bloom Fusion" />
+                    </a>
+                    <div class="product-cart__details">
+                      <div class="product-cart__info">
+                        <h4 class="product-cart__name">
+                          <a href="/blooming-symphony/">Bloom Fusion</a>
+                        </h4>
+                        <p class="product-cart__price">90€</p>
+                      </div>
+                      <p class="product-cart__description">
+                        Vibrant roses, delicate lilies, sprigs of fragrant
+                        lavender, all wrapped in lush greenery
+                      </p>
+                      <div class="product-cart__active">
+                        <div class="quantity-bg">
+                          <button class="quantity-bg__btn">-</button>
+                          <span class="quantity-bg__value">1</span>
+                          <button class="quantity-bg__btn">+</button>
+                        </div>
+                        <button class="delete-btn">
+                          <img
+                            src="../images/icon/delete.svg"
+                            alt="Delete icon"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cart__block">
+                <h2 class="cart__title">Total</h2>
+                <div class="cart__total total-block">
+                  <ul class="total-block__products product-total">
+                    <li class="product-total__item">
+                      <h5 class="product-total__name">
+                        <a href="/blooming-symphony/">Garden Medley</a>
+                      </h5>
+                      <div class="product-total__price">100€</div>
+                    </li>
+                    <li class="product-total__item">
+                      <h5 class="product-total__name">
+                        <a href="/blooming-symphony/">Bloom Fusion</a>
+                      </h5>
+                      <div class="product-total__price">90€</div>
+                    </li>
+                  </ul>
+                  <div class="total-block__delivery delivery-item">
+                    <div class="delivery-item__delivery">
+                      <div class="delivery-item__title">Delivery:</div>
+                      <div class="delivery-item__desc">Free</div>
+                    </div>
+                    <div class="delivery-item__sale">
+                      <div class="delivery-item__title">Sale:</div>
+                      <div class="delivery-item__desc">30€</div>
+                    </div>
+                  </div>
+                  <div class="total-block__total block-total">
+                    <div class="block-total__title">Total:</div>
+                    <div class="block-total__price">160€</div>
+                  </div>
+                  <a class="button" href="/catalog">
+                    <div class="button__wrapper">Pay</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="footer"></div>
+    </div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
