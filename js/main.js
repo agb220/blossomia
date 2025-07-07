@@ -2,14 +2,14 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // add header
-  fetch("components/header.html")
+  fetch("/components/header.html")
     .then((res) => res.text())
     .then((data) => {
       document.getElementById("header").innerHTML = data;
     });
 
   //  add footer
-  fetch("components/footer.html")
+  fetch("/components/footer.html")
     .then((res) => res.text())
     .then((data) => {
       document.getElementById("footer").innerHTML = data;

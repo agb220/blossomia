@@ -96,7 +96,7 @@
       top: toRem(91);
       left: -100%;
       width: 100%;
-      height: calc(100vh - toRem(91));
+      height: calc(100svh - toRem(91));
       background-color: $bgMain;
       padding: toRem(50) toRem(20);
       flex-direction: column;
@@ -182,7 +182,7 @@
   }
 
   &__cart-mb {
-    @media (min-width: 48em) {
+    @media (min-width: 32em) {
       display: none;
     }
   }

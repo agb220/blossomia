@@ -191,7 +191,7 @@ body.menu-open .header .icon-menu::after {
   top: 5.6875rem;
   left: -100%;
   width: 100%;
-  height: calc(100vh - 5.6875rem);
+  height: calc(100svh - 5.6875rem);
   background-color: #f8f3ec;
   padding: 3.125rem 1.25rem;
   flex-direction: column;
@@ -268,7 +268,7 @@ body.menu-open .header .menu__body {
     display: none;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: 32em) {
   .header__cart-mb {
     display: none;
   }
@@ -1682,7 +1682,7 @@ body {
   }
 }
 .follow__mb-img {
-  aspect-ratio: 300/318;
+  overflow: hidden;
   max-height: 19.875rem;
   opacity: 0;
   transition: opacity 5s ease;
