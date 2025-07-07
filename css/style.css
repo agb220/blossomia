@@ -191,7 +191,7 @@ body.menu-open .header .icon-menu::after {
   top: 5.6875rem;
   left: -100%;
   width: 100%;
-  height: calc(100vh - 5.6875rem);
+  height: calc(100dvh - 5.6875rem);
   background-color: #f8f3ec;
   padding: 3.125rem 1.25rem;
   flex-direction: column;
