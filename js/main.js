@@ -1,72 +1,26 @@
-"use strick";
+"use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/components/header.html")
+  // add header
+  fetch("components/header.html")
     .then((res) => res.text())
     .then((data) => {
       document.getElementById("header").innerHTML = data;
     });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("/components/footer.html")
+  //  add footer
+  fetch("components/footer.html")
     .then((res) => res.text())
     .then((data) => {
       document.getElementById("footer").innerHTML = data;
     });
-});
 
-document.addEventListener("click", documentActions);
-
-function documentActions(e) {
-  const targetElement = e.target;
-
-  if (targetElement.closest(".icon-menu")) {
-    document.body.classList.toggle("menu-open");
-  }
-}
-
-document.addEventListener("click", function (e) {
-  const dropdown = e.target.closest(".dropdown");
-  if (e.target.closest(".dropdown__title")) {
-    dropdown.classList.toggle("active");
-  } else {
-    document.querySelectorAll(".dropdown").forEach((drop) => {
-      if (drop !== dropdown) {
-        drop.classList.remove("active");
-      }
-    });
-  }
-});
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth >= 768) {
-    document.body.classList.remove("menu-open");
-  }
-});
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
-
-document
-  .querySelectorAll(".hero__img-left, .hero__img-right")
-  .forEach((el) => observer.observe(el));
-
-document.addEventListener("DOMContentLoaded", () => {
+  // animation for pictures
   const animatedImages = document.querySelectorAll(
     ".hero__img-mb, .about__img-left, .about__img, .about__img--mb, .first-purchase__image, .follow__image, .follow__mb-img"
   );
 
-  const observer = new IntersectionObserver(
+  const observerVisible = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -80,20 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  animatedImages.forEach((img) => observer.observe(img));
-});
+  animatedImages.forEach((img) => observerVisible.observe(img));
 
-document.querySelectorAll(".icon__button").forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
+  //  animation of popular elements
   const animatedElements = document.querySelectorAll(".popular__item, .item");
 
-  const observer = new IntersectionObserver(
+  const observerFade = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -107,5 +53,62 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  animatedElements.forEach((el) => observer.observe(el));
+  animatedElements.forEach((el) => observerFade.observe(el));
+});
+
+// left/right animation (hero images)
+const observerSideImages = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+        observerSideImages.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+document
+  .querySelectorAll(".hero__img-left, .hero__img-right")
+  .forEach((el) => observerSideImages.observe(el));
+
+//  burger-menu toggle
+document.addEventListener("click", documentActions);
+
+function documentActions(e) {
+  const targetElement = e.target;
+
+  if (targetElement.closest(".icon-menu")) {
+    document.body.classList.toggle("menu-open");
+  }
+}
+
+// dropdown toggle
+document.addEventListener("click", function (e) {
+  const dropdown = e.target.closest(".dropdown");
+  if (e.target.closest(".dropdown__title")) {
+    dropdown.classList.toggle("active");
+  } else {
+    document.querySelectorAll(".dropdown").forEach((drop) => {
+      if (drop !== dropdown) {
+        drop.classList.remove("active");
+      }
+    });
+  }
+});
+
+// remove the menu on the desktop during the re-site
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 768) {
+    document.body.classList.remove("menu-open");
+  }
+});
+
+//  blocking the standard action of clicking on icons
+document.querySelectorAll(".icon__button").forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
 });
