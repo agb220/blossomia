@@ -1444,7 +1444,8 @@ body {
   // .follow__mb-img
 
   &__mb-img {
-    aspect-ratio: 300 / 318;
+    // aspect-ratio: 300 / 318;
+    width: 100%;
     max-height: toRem(318);
 
     opacity: 0;
