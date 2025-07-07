@@ -1444,8 +1444,9 @@ body {
   // .follow__mb-img
 
   &__mb-img {
+    overflow: hidden;
     // aspect-ratio: 300 / 318;
-    width: 100%;
+
     max-height: toRem(318);
 
     opacity: 0;

@@ -1682,7 +1682,7 @@ body {
   }
 }
 .follow__mb-img {
-  width: 100%;
+  overflow: hidden;
   max-height: 19.875rem;
   opacity: 0;
   transition: opacity 5s ease;
