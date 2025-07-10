@@ -9,6 +9,7 @@ html {
 body {
   font-family: "KoPubBatang", serif;
   font-size: toRem(17);
+  font-weight: 400;
   line-height: 1.2;
   color: $colorMain;
   background-color: $bgMain;
@@ -327,12 +328,11 @@ body {
 
   &__title {
     font-size: toRem(30);
-    font-weight: 300 !important;
+    font-weight: 300;
     margin-bottom: toRem(38);
-    font-family: inherit;
 
     @media (min-width: 48em) {
-      font-size: toRem(48);
+      // font-size: toRem(48);
       max-width: toRem(600);
       margin-bottom: toRem(0);
     }
