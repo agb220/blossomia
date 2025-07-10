@@ -778,8 +778,9 @@ body {
 }
 .hero__title {
   font-size: 1.875rem;
-  font-weight: 300;
+  font-weight: 300 !important;
   margin-bottom: 2.375rem;
+  font-family: inherit;
 }
 @media (min-width: 48em) {
   .hero__title {
