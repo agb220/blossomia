@@ -752,7 +752,12 @@ body {
 
 /* Hero section */
 .main-margin-top {
-  margin-top: 6.6875rem;
+  margin-top: 3.75rem;
+}
+@media (min-width: 48em) {
+  .main-margin-top {
+    margin-top: 6.6875rem;
+  }
 }
 
 .hero {

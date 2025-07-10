@@ -298,7 +298,11 @@ body {
 /* Hero section */
 
 .main-margin-top {
-  margin-top: toRem(107);
+  margin-top: toRem(60);
+
+  @media (min-width: 48em) {
+    margin-top: toRem(107);
+  }
 }
 
 .hero {
