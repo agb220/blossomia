@@ -1628,6 +1628,11 @@ body {
   font-family: "Carme";
   font-size: 1.4375rem;
 }
+@media (any-hover: hover), (pointer: fine) {
+  .follow__link:hover {
+    color: #b0a496;
+  }
+}
 .follow__images {
   display: flex;
   gap: 2.1875rem;
