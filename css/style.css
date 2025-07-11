@@ -1632,6 +1632,12 @@ body {
 .follow__link {
   font-family: "Carme";
   font-size: 1.4375rem;
+  transition: color 0.3s;
+}
+@media (any-hover: hover), (pointer: fine) {
+  .follow__link:hover {
+    color: #b0a496;
+  }
 }
 .follow__images {
   display: flex;
