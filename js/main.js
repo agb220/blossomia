@@ -2,18 +2,18 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // add header
-  fetch("components/header.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("header").innerHTML = data;
-    });
+  // fetch("components/header.html")
+  //   .then((res) => res.text())
+  //   .then((data) => {
+  //     document.getElementById("header").innerHTML = data;
+  //   });
 
   //  add footer
-  fetch("components/footer.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("footer").innerHTML = data;
-    });
+  // fetch("components/footer.html")
+  //   .then((res) => res.text())
+  //   .then((data) => {
+  //     document.getElementById("footer").innerHTML = data;
+  //   });
 
   // animation for pictures
   const animatedImages = document.querySelectorAll(
