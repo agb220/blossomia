@@ -1380,6 +1380,7 @@ body {
   &__link {
     font-family: "Carme";
     font-size: toRem(23);
+    color: inherit;
     transition: color 0.3s;
 
     @media (any-hover: hover), (pointer: fine) {
