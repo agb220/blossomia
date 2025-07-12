@@ -309,11 +309,12 @@ body {
 .hero {
   position: relative;
   overflow: hidden;
+  min-height: 95svh;
 
   &__wrapper {
     display: flex;
     flex-direction: column;
-    padding: toRem(35) 0 toRem(64) 0;
+    padding: toRem(64) 0 toRem(64) 0;
 
     @media (min-width: 48em) {
       padding: toRem(125) 0 toRem(103) 0;
@@ -332,7 +333,7 @@ body {
     margin-bottom: toRem(38);
 
     @media (min-width: 48em) {
-      // font-size: toRem(48);
+      font-size: toRem(48);
       max-width: toRem(600);
       margin-bottom: toRem(0);
     }
@@ -533,7 +534,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: toRem(50);
-    padding: toRem(64) 0 toRem(64) 0;
+    padding: 0 0 toRem(64) 0;
 
     @media (min-width: 48em) {
       gap: toRem(61);
